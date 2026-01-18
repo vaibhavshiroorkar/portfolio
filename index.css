@@ -2,32 +2,32 @@
    DESIGN TOKENS & CSS CUSTOM PROPERTIES
    ========================================== */
 :root {
-    /* Colors - Dark Theme */
-    --bg-primary: #0a0a0f;
-    --bg-secondary: #0f1419;
-    --bg-tertiary: #161b22;
-    --bg-card: rgba(22, 27, 34, 0.7);
+    /* Colors - Professional Dark Theme */
+    --bg-primary: #0a0a0c;
+    --bg-secondary: #101014;
+    --bg-tertiary: #18181c;
+    --bg-card: rgba(24, 24, 28, 0.8);
 
-    /* Gradient Colors */
-    --gradient-start: #06b6d4;
-    --gradient-mid: #8b5cf6;
-    --gradient-end: #ec4899;
+    /* Accent Colors - Professional & Subtle */
+    --accent-primary: #e2e8f0;
+    --accent-secondary: #94a3b8;
+    --accent-highlight: #f8fafc;
 
     /* Text Colors */
-    --text-primary: #f0f6fc;
-    --text-secondary: #8b949e;
-    --text-tertiary: #6e7681;
+    --text-primary: #f1f5f9;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
 
-    /* Accent Colors */
-    --accent-cyan: #06b6d4;
-    --accent-purple: #8b5cf6;
-    --accent-pink: #ec4899;
-    --accent-blue: #3b82f6;
+    /* Professional Accent */
+    --accent-cyan: #94a3b8;
+    --accent-purple: #a1a1aa;
+    --accent-pink: #cbd5e1;
+    --accent-blue: #e2e8f0;
 
     /* Glass Effect */
-    --glass-bg: rgba(22, 27, 34, 0.85);
-    --glass-border: rgba(255, 255, 255, 0.12);
-    --glass-shadow: rgba(0, 0, 0, 0.4);
+    --glass-bg: rgba(24, 24, 28, 0.9);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: rgba(0, 0, 0, 0.5);
 
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -134,10 +134,8 @@ button {
 }
 
 .highlight {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--accent-primary);
+    font-weight: 600;
 }
 
 .glass-card {
@@ -152,8 +150,8 @@ button {
 
 .glass-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(6, 182, 212, 0.1);
-    border-color: rgba(6, 182, 212, 0.3);
+    box-shadow: 0 16px 48px rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
 }
 
 /* ==========================================
@@ -190,10 +188,7 @@ button {
 .nav-logo {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .nav-menu {
@@ -218,7 +213,7 @@ button {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+    background: var(--text-primary);
     transition: width var(--transition-base);
 }
 
@@ -233,7 +228,7 @@ button {
 }
 
 .nav-cta {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    background: var(--text-primary);
     color: var(--bg-primary) !important;
     padding: var(--space-2) var(--space-5) !important;
     border-radius: var(--radius-full);
@@ -246,7 +241,7 @@ button {
 
 .nav-cta:hover {
     transform: scale(1.05);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 .nav-toggle {
@@ -289,20 +284,20 @@ button {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(6, 182, 212, 0.15), transparent),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(139, 92, 246, 0.1), transparent),
-        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(236, 72, 153, 0.08), transparent);
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.03), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 255, 255, 0.02), transparent),
+        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(255, 255, 255, 0.015), transparent);
 }
 
 .hero-particles {
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(2px 2px at 20px 30px, rgba(6, 182, 212, 0.3), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(139, 92, 246, 0.3), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.3), transparent),
-        radial-gradient(2px 2px at 130px 80px, rgba(6, 182, 212, 0.2), transparent),
-        radial-gradient(1px 1px at 160px 120px, rgba(139, 92, 246, 0.2), transparent);
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.15), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.1), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.2), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.08), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.12), transparent);
     background-size: 200px 200px;
     animation: float 20s linear infinite;
 }
@@ -324,7 +319,7 @@ button {
 
 .hero-greeting {
     font-size: var(--font-size-lg);
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
     font-weight: 500;
     margin-bottom: var(--space-4);
     letter-spacing: 0.1em;
@@ -370,14 +365,14 @@ button {
 }
 
 .hero-btn.primary {
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    background: var(--text-primary);
     color: var(--bg-primary);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
 }
 
 .hero-btn.primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(6, 182, 212, 0.5);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.25);
 }
 
 .hero-btn.secondary {
@@ -388,8 +383,8 @@ button {
 }
 
 .hero-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--text-secondary);
     transform: translateY(-2px);
 }
 
@@ -414,10 +409,10 @@ button {
 }
 
 .hero-social a:hover {
-    color: var(--accent-cyan);
-    border-color: var(--accent-cyan);
+    color: var(--text-primary);
+    border-color: var(--text-secondary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
 }
 
 .hero-scroll {
@@ -449,7 +444,7 @@ button {
     transform: translateX(-50%);
     width: 4px;
     height: 8px;
-    background: var(--accent-cyan);
+    background: var(--text-secondary);
     border-radius: var(--radius-full);
     animation: scroll 1.5s ease-in-out infinite;
 }
@@ -549,7 +544,7 @@ button {
     display: block;
     width: 60px;
     height: 4px;
-    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid));
+    background: var(--text-secondary);
     border-radius: var(--radius-full);
     margin: var(--space-4) auto 0;
 }
@@ -600,10 +595,7 @@ button {
     display: block;
     font-size: var(--font-size-4xl);
     font-weight: 800;
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .stat-label {
@@ -629,7 +621,7 @@ button {
     top: 0;
     bottom: 0;
     width: 2px;
-    background: linear-gradient(180deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+    background: linear-gradient(180deg, var(--text-secondary), var(--text-tertiary));
 }
 
 .timeline-item {
@@ -650,8 +642,8 @@ button {
     height: 18px;
     border-radius: var(--radius-full);
     background: var(--bg-primary);
-    border: 3px solid var(--accent-cyan);
-    box-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
+    border: 3px solid var(--text-secondary);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
 }
 
 .timeline-content {
@@ -692,12 +684,12 @@ button {
 .badge {
     display: inline-block;
     padding: var(--space-1) var(--space-3);
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
-    border: 1px solid rgba(6, 182, 212, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: 500;
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
 }
 
 /* ==========================================
@@ -732,8 +724,8 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
-    color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-secondary);
 }
 
 .experience-meta {
@@ -745,7 +737,7 @@ button {
 
 .experience-date {
     font-size: var(--font-size-sm);
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
     font-weight: 500;
 }
 
@@ -868,7 +860,7 @@ button {
     content: '→';
     position: absolute;
     left: 0;
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
 }
 
 .project-tech {
@@ -880,23 +872,23 @@ button {
 
 .tech-tag {
     padding: var(--space-1) var(--space-3);
-    background: rgba(6, 182, 212, 0.1);
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 500;
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
 }
 
 .project-status {
     display: inline-block;
     padding: var(--space-1) var(--space-3);
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 600;
-    color: var(--accent-purple);
+    color: var(--text-secondary);
 }
 
 .project-btn {
@@ -905,7 +897,7 @@ button {
     gap: var(--space-2);
     margin-top: var(--space-4);
     padding: var(--space-3) var(--space-5);
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    background: var(--text-primary);
     color: var(--bg-primary);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
@@ -915,7 +907,7 @@ button {
 
 .project-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================
@@ -940,7 +932,7 @@ button {
     align-items: center;
     gap: var(--space-3);
     margin-bottom: var(--space-5);
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
 }
 
 .skill-category-header h3 {
@@ -957,8 +949,8 @@ button {
 
 .skill-tag {
     padding: var(--space-2) var(--space-4);
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
-    border: 1px solid rgba(6, 182, 212, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -967,8 +959,8 @@ button {
 }
 
 .skill-tag:hover {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
-    border-color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
     color: var(--text-primary);
     transform: translateY(-2px);
 }
@@ -1000,13 +992,13 @@ button {
 }
 
 .achievement-icon.trophy {
-    background: linear-gradient(135deg, rgba(234, 179, 8, 0.2), rgba(245, 158, 11, 0.2));
-    color: #fbbf24;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-secondary);
 }
 
 .achievement-icon.medal {
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
-    color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-tertiary);
 }
 
 .achievement-card h3 {
@@ -1301,10 +1293,7 @@ button {
     font-size: var(--font-size-2xl);
     font-weight: 700;
     margin-bottom: var(--space-3);
-    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .modal-intro {
@@ -1333,12 +1322,12 @@ button {
 }
 
 .modal-link:hover {
-    background: rgba(6, 182, 212, 0.1);
-    border-color: var(--accent-cyan);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateX(4px);
 }
 
 .modal-link svg {
     flex-shrink: 0;
-    color: var(--accent-cyan);
+    color: var(--text-secondary);
 }

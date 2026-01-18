@@ -834,6 +834,15 @@ button {
     margin-bottom: var(--space-3);
 }
 
+.project-title a {
+    color: var(--text-primary);
+    transition: color var(--transition-fast);
+}
+
+.project-title a:hover {
+    color: var(--accent-cyan);
+}
+
 .project-description {
     color: var(--text-secondary);
     margin-bottom: var(--space-5);
@@ -877,6 +886,36 @@ button {
     font-size: var(--font-size-xs);
     font-weight: 500;
     color: var(--accent-cyan);
+}
+
+.project-status {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    color: var(--accent-purple);
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-5);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    color: var(--bg-primary);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: all var(--transition-base);
+}
+
+.project-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(6, 182, 212, 0.4);
 }
 
 /* ==========================================
@@ -939,9 +978,9 @@ button {
    ========================================== */
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-6);
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1195,4 +1234,111 @@ button {
     .contact-card {
         padding: var(--space-6);
     }
+
+    .modal-content {
+        width: 95%;
+        padding: var(--space-6);
+    }
+}
+
+/* ==========================================
+   CONTACT MODAL
+   ========================================== */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 480px;
+    width: 90%;
+    padding: var(--space-10);
+    text-align: center;
+    transform: translateY(20px) scale(0.95);
+    transition: transform var(--transition-base);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: var(--space-4);
+    right: var(--space-4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--radius-full);
+    color: var(--text-secondary);
+    transition: all var(--transition-fast);
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.modal-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.modal-intro {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    margin-bottom: var(--space-8);
+}
+
+.modal-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.modal-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+    padding: var(--space-4) var(--space-6);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    color: var(--text-primary);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+}
+
+.modal-link:hover {
+    background: rgba(6, 182, 212, 0.1);
+    border-color: var(--accent-cyan);
+    transform: translateX(4px);
+}
+
+.modal-link svg {
+    flex-shrink: 0;
+    color: var(--accent-cyan);
 }

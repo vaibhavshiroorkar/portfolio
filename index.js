@@ -1,0 +1,144 @@
+// ==========================================
+// PORTFOLIO JAVASCRIPT
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', () => {
+    initNavigation();
+    initScrollAnimations();
+    initNavbarScroll();
+    initActiveSection();
+});
+
+// ==========================================
+// NAVIGATION
+// ==========================================
+function initNavigation() {
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    // Mobile menu toggle
+    navToggle?.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    
+    // Close menu when clicking a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle?.classList.remove('active');
+            navMenu?.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navMenu?.classList.contains('active') && 
+            !navMenu.contains(e.target) && 
+            !navToggle?.contains(e.target)) {
+            navToggle?.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+}
+
+// ==========================================
+// SCROLL ANIMATIONS
+// ==========================================
+function initScrollAnimations() {
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, observerOptions);
+    
+    // Add scroll-animate class to elements
+    const animateElements = document.querySelectorAll(
+        '.glass-card, .timeline-item, .section-title, .about-content, .stat'
+    );
+    
+    animateElements.forEach((el, index) => {
+        el.classList.add('scroll-animate');
+        el.style.transitionDelay = `${index % 4 * 0.1}s`;
+        observer.observe(el);
+    });
+}
+
+// ==========================================
+// NAVBAR SCROLL EFFECT
+// ==========================================
+function initNavbarScroll() {
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        // Add/remove scrolled class
+        if (currentScroll > 50) {
+            navbar?.classList.add('scrolled');
+        } else {
+            navbar?.classList.remove('scrolled');
+        }
+        
+        lastScroll = currentScroll;
+    }, { passive: true });
+}
+
+// ==========================================
+// ACTIVE SECTION HIGHLIGHTING
+// ==========================================
+function initActiveSection() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    const observerOptions = {
+        root: null,
+        rootMargin: '-50% 0px -50% 0px',
+        threshold: 0
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.getAttribute('id');
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+    }, observerOptions);
+    
+    sections.forEach(section => observer.observe(section));
+}
+
+// ==========================================
+// SMOOTH SCROLL POLYFILL (for older browsers)
+// ==========================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});

@@ -992,7 +992,7 @@ button {
     text-align: center;
     font-size: var(--font-size-lg);
     color: var(--text-secondary);
-    max-width: 600px;
+    max-width: 900px;
     margin: -var(--space-8) auto var(--space-12);
 }
 

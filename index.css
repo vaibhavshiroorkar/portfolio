@@ -2,32 +2,32 @@
    DESIGN TOKENS & CSS CUSTOM PROPERTIES
    ========================================== */
 :root {
-    /* Colors - Professional Dark Theme */
-    --bg-primary: #0a0a0c;
-    --bg-secondary: #101014;
-    --bg-tertiary: #18181c;
-    --bg-card: rgba(24, 24, 28, 0.8);
+    /* Colors - Professional Light Theme (Inverted) */
+    --bg-primary: #f8fafc;
+    --bg-secondary: #f1f5f9;
+    --bg-tertiary: #e2e8f0;
+    --bg-card: rgba(255, 255, 255, 0.8);
 
     /* Accent Colors - Professional & Subtle */
-    --accent-primary: #e2e8f0;
-    --accent-secondary: #94a3b8;
-    --accent-highlight: #f8fafc;
+    --accent-primary: #1e293b;
+    --accent-secondary: #475569;
+    --accent-highlight: #0f172a;
 
     /* Text Colors */
-    --text-primary: #f1f5f9;
-    --text-secondary: #94a3b8;
+    --text-primary: #0f172a;
+    --text-secondary: #475569;
     --text-tertiary: #64748b;
 
     /* Professional Accent */
-    --accent-cyan: #94a3b8;
-    --accent-purple: #a1a1aa;
-    --accent-pink: #cbd5e1;
-    --accent-blue: #e2e8f0;
+    --accent-cyan: #475569;
+    --accent-purple: #52525b;
+    --accent-pink: #334155;
+    --accent-blue: #1e293b;
 
     /* Glass Effect */
-    --glass-bg: rgba(24, 24, 28, 0.9);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-shadow: rgba(0, 0, 0, 0.5);
+    --glass-bg: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(0, 0, 0, 0.08);
+    --glass-shadow: rgba(0, 0, 0, 0.1);
 
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -150,8 +150,8 @@ button {
 
 .glass-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+    border-color: rgba(0, 0, 0, 0.12);
 }
 
 /* ==========================================
@@ -164,7 +164,7 @@ button {
     right: 0;
     z-index: 1000;
     padding: var(--space-4) 0;
-    background: rgba(10, 10, 15, 0.8);
+    background: rgba(248, 250, 252, 0.85);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border-bottom: 1px solid transparent;
@@ -173,7 +173,7 @@ button {
 
 .navbar.scrolled {
     border-bottom-color: var(--glass-border);
-    background: rgba(10, 10, 15, 0.95);
+    background: rgba(248, 250, 252, 0.98);
 }
 
 .nav-container {
@@ -284,20 +284,20 @@ button {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(255, 255, 255, 0.03), transparent),
-        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(255, 255, 255, 0.02), transparent),
-        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(255, 255, 255, 0.015), transparent);
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 0, 0, 0.03), transparent),
+        radial-gradient(ellipse 60% 40% at 80% 60%, rgba(0, 0, 0, 0.02), transparent),
+        radial-gradient(ellipse 50% 30% at 20% 80%, rgba(0, 0, 0, 0.015), transparent);
 }
 
 .hero-particles {
     position: absolute;
     inset: 0;
     background-image:
-        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.15), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.1), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(255, 255, 255, 0.2), transparent),
-        radial-gradient(2px 2px at 130px 80px, rgba(255, 255, 255, 0.08), transparent),
-        radial-gradient(1px 1px at 160px 120px, rgba(255, 255, 255, 0.12), transparent);
+        radial-gradient(2px 2px at 20px 30px, rgba(0, 0, 0, 0.08), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(0, 0, 0, 0.06), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(0, 0, 0, 0.1), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(0, 0, 0, 0.05), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(0, 0, 0, 0.07), transparent);
     background-size: 200px 200px;
     animation: float 20s linear infinite;
 }
@@ -383,7 +383,7 @@ button {
 }
 
 .hero-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.05);
     border-color: var(--text-secondary);
     transform: translateY(-2px);
 }
@@ -412,7 +412,7 @@ button {
     color: var(--text-primary);
     border-color: var(--text-secondary);
     transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .hero-scroll {
@@ -684,8 +684,8 @@ button {
 .badge {
     display: inline-block;
     padding: var(--space-1) var(--space-3);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -724,7 +724,7 @@ button {
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-lg);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     color: var(--text-secondary);
 }
 
@@ -872,8 +872,8 @@ button {
 
 .tech-tag {
     padding: var(--space-1) var(--space-3);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 500;
@@ -883,8 +883,8 @@ button {
 .project-status {
     display: inline-block;
     padding: var(--space-1) var(--space-3);
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 600;
@@ -949,8 +949,8 @@ button {
 
 .skill-tag {
     padding: var(--space-2) var(--space-4);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-full);
     font-size: var(--font-size-sm);
     font-weight: 500;
@@ -959,8 +959,8 @@ button {
 }
 
 .skill-tag:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.06);
+    border-color: rgba(0, 0, 0, 0.15);
     color: var(--text-primary);
     transform: translateY(-2px);
 }
@@ -992,12 +992,12 @@ button {
 }
 
 .achievement-icon.trophy {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 0, 0, 0.05);
     color: var(--text-secondary);
 }
 
 .achievement-icon.medal {
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     color: var(--text-tertiary);
 }
 
@@ -1085,7 +1085,7 @@ button {
         width: 80%;
         max-width: 300px;
         height: 100vh;
-        background: rgba(15, 20, 25, 0.98);
+        background: rgba(248, 250, 252, 0.98);
         flex-direction: column;
         padding: var(--space-20) var(--space-8);
         gap: var(--space-6);
@@ -1286,7 +1286,7 @@ button {
 
 .modal-close:hover {
     color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .modal-title {
@@ -1313,7 +1313,7 @@ button {
     align-items: center;
     gap: var(--space-4);
     padding: var(--space-4) var(--space-6);
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(0, 0, 0, 0.03);
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-lg);
     color: var(--text-primary);
@@ -1322,8 +1322,8 @@ button {
 }
 
 .modal-link:hover {
-    background: rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.15);
     transform: translateX(4px);
 }
 

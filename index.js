@@ -79,22 +79,48 @@ function initScrollAnimations() {
 // ==========================================
 // NAVBAR SCROLL EFFECT
 // ==========================================
+
+// Throttle utility - limits function execution to once per specified delay
+function throttle(func, delay) {
+    let lastCall = 0;
+    let timeoutId = null;
+    return function (...args) {
+        const now = performance.now();
+        const remaining = delay - (now - lastCall);
+
+        if (remaining <= 0) {
+            if (timeoutId) {
+                cancelAnimationFrame(timeoutId);
+                timeoutId = null;
+            }
+            lastCall = now;
+            func.apply(this, args);
+        } else if (!timeoutId) {
+            timeoutId = requestAnimationFrame(() => {
+                lastCall = performance.now();
+                timeoutId = null;
+                func.apply(this, args);
+            });
+        }
+    };
+}
+
 function initNavbarScroll() {
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
+    if (!navbar) return;
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = throttle(() => {
         const currentScroll = window.pageYOffset;
 
         // Add/remove scrolled class
         if (currentScroll > 50) {
-            navbar?.classList.add('scrolled');
+            navbar.classList.add('scrolled');
         } else {
-            navbar?.classList.remove('scrolled');
+            navbar.classList.remove('scrolled');
         }
+    }, 16); // ~60fps
 
-        lastScroll = currentScroll;
-    }, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
 }
 
 // ==========================================

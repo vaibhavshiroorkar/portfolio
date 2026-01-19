@@ -177,7 +177,7 @@ button {
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid transparent;
     box-shadow: none;
-    transition: all var(--transition-base);
+    transition: background-color var(--transition-base), backdrop-filter var(--transition-base), border-bottom var(--transition-base), box-shadow var(--transition-base);
     will-change: background-color, backdrop-filter;
 }
 
@@ -316,6 +316,7 @@ button {
         radial-gradient(1px 1px at 160px 120px, rgba(0, 0, 0, 0.22), transparent);
     background-size: 200px 200px;
     animation: float 20s linear infinite;
+    will-change: transform;
 }
 
 @keyframes float {
@@ -558,11 +559,14 @@ button {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
+    will-change: opacity, transform;
 }
 
 .scroll-animate.in-view {
     opacity: 1;
     transform: translateY(0);
+    /* Remove will-change after animation to save memory, though simpler to leave it or use JS to remove. 
+       For now, we keep it simple or remove it if we could via JS. But CSS only here. */
 }
 
 /* ==========================================
@@ -571,6 +575,9 @@ button {
 .section {
     padding: var(--space-24) 0;
     position: relative;
+    content-visibility: auto;
+    contain-intrinsic-size: 800px;
+    /* Estimate height to prevent scrollbar jumping */
 }
 
 .section-title {
@@ -911,6 +918,45 @@ button {
     align-items: center;
     padding-top: var(--space-4);
     border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-preview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--space-4);
+    overflow: hidden;
+    position: relative;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.project-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-preview img {
+    transform: scale(1.05);
+}
+
+.detail-preview {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 500px;
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    margin-bottom: var(--space-10);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.detail-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .project-arrow {
@@ -1464,26 +1510,29 @@ button {
 .modal-link.email-copy {
     cursor: pointer;
     position: relative;
+    /* Prevent layout shift from "Copied!" text */
+    min-width: max-content;
 }
 
 .modal-link .copy-hint {
     margin-left: auto;
     font-size: var(--font-size-xs);
     color: var(--text-tertiary);
+    position: relative;
+    transition: color var(--transition-fast);
 }
 
 .modal-link.email-copy.copied .copy-hint {
-    color: #16a34a;
+    color: transparent;
 }
 
 .modal-link.email-copy.copied .copy-hint::before {
     content: '✓ Copied!';
-}
-
-.modal-link.email-copy.copied .copy-hint {
-    font-size: 0;
-}
-
-.modal-link.email-copy.copied .copy-hint::before {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #16a34a;
     font-size: var(--font-size-xs);
+    white-space: nowrap;
 }

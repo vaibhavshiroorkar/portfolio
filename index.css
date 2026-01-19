@@ -941,20 +941,24 @@ button {
 }
 
 .project-tech {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-2);
     margin-top: auto;
 }
 
 .tech-tag {
-    padding: var(--space-1) var(--space-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--space-1) var(--space-2);
     background: rgba(0, 0, 0, 0.03);
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 500;
     color: var(--text-secondary);
+    text-align: center;
 }
 
 .project-status {

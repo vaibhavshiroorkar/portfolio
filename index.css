@@ -149,9 +149,16 @@ button {
 }
 
 .glass-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
-    border-color: rgba(0, 0, 0, 0.12);
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.project-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--space-1);
 }
 
 /* ==========================================
@@ -164,16 +171,20 @@ button {
     right: 0;
     z-index: 1000;
     padding: var(--space-4) 0;
-    background: rgba(248, 250, 252, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     border-bottom: 1px solid transparent;
+    box-shadow: none;
     transition: all var(--transition-base);
 }
 
 .navbar.scrolled {
-    border-bottom-color: var(--glass-border);
-    background: rgba(248, 250, 252, 0.98);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 .nav-container {
@@ -291,13 +302,16 @@ button {
 
 .hero-particles {
     position: absolute;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image:
-        radial-gradient(2px 2px at 20px 30px, rgba(0, 0, 0, 0.08), transparent),
-        radial-gradient(2px 2px at 40px 70px, rgba(0, 0, 0, 0.06), transparent),
-        radial-gradient(1px 1px at 90px 40px, rgba(0, 0, 0, 0.1), transparent),
-        radial-gradient(2px 2px at 130px 80px, rgba(0, 0, 0, 0.05), transparent),
-        radial-gradient(1px 1px at 160px 120px, rgba(0, 0, 0, 0.07), transparent);
+        radial-gradient(2px 2px at 20px 30px, rgba(0, 0, 0, 0.25), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(0, 0, 0, 0.2), transparent),
+        radial-gradient(1px 1px at 90px 40px, rgba(0, 0, 0, 0.3), transparent),
+        radial-gradient(2px 2px at 130px 80px, rgba(0, 0, 0, 0.15), transparent),
+        radial-gradient(1px 1px at 160px 120px, rgba(0, 0, 0, 0.22), transparent);
     background-size: 200px 200px;
     animation: float 20s linear infinite;
 }
@@ -362,6 +376,32 @@ button {
     font-weight: 600;
     border-radius: var(--radius-full);
     transition: all var(--transition-base);
+}
+
+/* GitHub Button - Black */
+.hero-btn.github-btn {
+    background: #0f172a;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.3);
+}
+
+.hero-btn.github-btn:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(15, 23, 42, 0.4);
+}
+
+/* LinkedIn Button - Gray */
+.hero-btn.linkedin-btn {
+    background: #6b7280;
+    color: #ffffff;
+    box-shadow: 0 4px 20px rgba(107, 114, 128, 0.3);
+}
+
+.hero-btn.linkedin-btn:hover {
+    background: #4b5563;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(107, 114, 128, 0.4);
 }
 
 .hero-btn.primary {
@@ -700,62 +740,75 @@ button {
 }
 
 .experience-grid {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
 }
 
 .experience-card {
-    padding: var(--space-8);
+    padding: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-.experience-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-6);
-    flex-wrap: wrap;
-    gap: var(--space-4);
+.experience-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.experience-card:hover .experience-arrow {
+    color: var(--accent-cyan);
 }
 
 .experience-icon {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-lg);
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(0, 0, 0, 0.04);
     color: var(--text-secondary);
-}
-
-.experience-meta {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
-}
-
-.experience-date {
-    font-size: var(--font-size-sm);
-    color: var(--text-secondary);
-    font-weight: 500;
-}
-
-.experience-location {
-    font-size: var(--font-size-sm);
-    color: var(--text-tertiary);
+    margin-bottom: var(--space-4);
 }
 
 .experience-title {
     font-size: var(--font-size-xl);
     font-weight: 700;
     margin-bottom: var(--space-2);
+    color: var(--text-primary);
 }
 
 .experience-company {
     font-size: var(--font-size-base);
     color: var(--text-secondary);
-    margin-bottom: var(--space-6);
+    margin-bottom: var(--space-3);
+}
+
+.experience-summary {
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    margin-bottom: var(--space-5);
+}
+
+.experience-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.experience-date {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.experience-arrow {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    transition: color var(--transition-fast);
 }
 
 .experience-list {
@@ -787,58 +840,82 @@ button {
    ========================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--space-8);
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: var(--space-6);
 }
 
 .project-card {
-    padding: var(--space-8);
+    padding: var(--space-6);
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 }
 
-.project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: var(--space-5);
+.project-card:hover {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover .project-arrow {
+    color: var(--accent-cyan);
 }
 
 .project-icon {
-    width: 56px;
-    height: 56px;
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: var(--radius-lg);
-    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(139, 92, 246, 0.2));
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.12), rgba(139, 92, 246, 0.12));
     color: var(--accent-cyan);
-}
-
-.project-date {
-    font-size: var(--font-size-sm);
-    color: var(--text-tertiary);
+    margin-bottom: var(--space-4);
 }
 
 .project-title {
     font-size: var(--font-size-xl);
     font-weight: 700;
-    margin-bottom: var(--space-3);
-}
-
-.project-title a {
+    margin-bottom: var(--space-2);
     color: var(--text-primary);
-    transition: color var(--transition-fast);
-}
-
-.project-title a:hover {
-    color: var(--accent-cyan);
 }
 
 .project-description {
     color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--space-4);
+    flex-grow: 1;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
     margin-bottom: var(--space-5);
-    line-height: 1.7;
+}
+
+.tech-tag {
+    padding: var(--space-1) var(--space-3);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.project-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-4);
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.project-arrow {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--text-tertiary);
+    transition: color var(--transition-fast);
 }
 
 .project-features {
@@ -881,14 +958,27 @@ button {
 }
 
 .project-status {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-1);
     padding: var(--space-1) var(--space-3);
-    background: rgba(0, 0, 0, 0.03);
-    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-full);
     font-size: var(--font-size-xs);
     font-weight: 600;
-    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-status.completed {
+    background: rgba(34, 197, 94, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(34, 197, 94, 0.2);
+}
+
+.project-status.in-progress {
+    background: rgba(245, 158, 11, 0.1);
+    color: #d97706;
+    border: 1px solid rgba(245, 158, 11, 0.2);
 }
 
 .project-btn {
@@ -979,6 +1069,30 @@ button {
 .achievement-card {
     padding: var(--space-8);
     text-align: center;
+    position: relative;
+}
+
+.achievement-badge {
+    display: inline-block;
+    padding: var(--space-1) var(--space-3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: var(--space-3);
+}
+
+.achievement-badge.winner {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.achievement-badge.participant {
+    background: rgba(0, 0, 0, 0.04);
+    color: var(--text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .achievement-icon {
@@ -991,14 +1105,18 @@ button {
     border-radius: var(--radius-full);
 }
 
+/* Winner Achievement - Black trophy */
 .achievement-icon.trophy {
-    background: rgba(0, 0, 0, 0.05);
-    color: var(--text-secondary);
+    background: rgba(0, 0, 0, 0.08);
+    color: #0f172a;
+    border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
+/* Participant Achievement - Match trophy styling */
 .achievement-icon.medal {
-    background: rgba(0, 0, 0, 0.03);
-    color: var(--text-tertiary);
+    background: rgba(0, 0, 0, 0.08);
+    color: #0f172a;
+    border: 2px solid rgba(0, 0, 0, 0.15);
 }
 
 .achievement-card h3 {
@@ -1330,4 +1448,31 @@ button {
 .modal-link svg {
     flex-shrink: 0;
     color: var(--text-secondary);
+}
+
+.modal-link.email-copy {
+    cursor: pointer;
+    position: relative;
+}
+
+.modal-link .copy-hint {
+    margin-left: auto;
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+}
+
+.modal-link.email-copy.copied .copy-hint {
+    color: #16a34a;
+}
+
+.modal-link.email-copy.copied .copy-hint::before {
+    content: '✓ Copied!';
+}
+
+.modal-link.email-copy.copied .copy-hint {
+    font-size: 0;
+}
+
+.modal-link.email-copy.copied .copy-hint::before {
+    font-size: var(--font-size-xs);
 }

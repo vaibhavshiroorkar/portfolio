@@ -182,12 +182,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         e.preventDefault();
         const target = document.querySelector(href);
         if (target) {
-            const navbarHeight = 100; // Fixed navbar height + extra padding
-            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            const navbarHeight = 76; // Base nav height
+            const offset = navbarHeight - (window.innerHeight * 0.05); // Scroll 5% lower (into the page)
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
             window.scrollTo({
                 top: targetPosition,
                 behavior: 'smooth'
             });
         }
     });
+});
+
+// ==========================================
+// HASH SCROLL ON PAGE LOAD (for cross-page navigation)
+// ==========================================
+// When navigating from subpages with hash (e.g., ../index.html#projects),
+// scroll to the target with the same 5% offset
+window.addEventListener('load', function () {
+    if (window.location.hash) {
+        const target = document.querySelector(window.location.hash);
+        if (target) {
+            // Small delay to let the page fully render
+            setTimeout(() => {
+                const navbarHeight = 76;
+                const offset = navbarHeight - (window.innerHeight * 0.05);
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }, 100);
+        }
+    }
 });

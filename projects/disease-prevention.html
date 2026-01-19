@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prevention System | Vaibhav Shiroorkar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        .detail-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .detail-header {
+            padding: var(--space-12) 0 var(--space-8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            margin-bottom: var(--space-10);
+        }
+
+        .detail-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .detail-status {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-1) var(--space-3);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .detail-status.completed {
+            background: rgba(34, 197, 94, 0.1);
+            color: #16a34a;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .detail-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: var(--space-3);
+            color: var(--text-primary);
+        }
+
+        .detail-date {
+            font-size: var(--font-size-base);
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-6);
+        }
+
+        .detail-actions {
+            display: flex;
+            gap: var(--space-3);
+            flex-wrap: wrap;
+        }
+
+        .detail-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-5);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            transition: all var(--transition-base);
+        }
+
+        .detail-btn.primary {
+            background: var(--text-primary);
+            color: white;
+        }
+
+        .detail-btn.primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .detail-btn.secondary {
+            background: rgba(0, 0, 0, 0.05);
+            color: var(--text-primary);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .detail-btn.secondary:hover {
+            background: rgba(0, 0, 0, 0.08);
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--space-12);
+            padding-bottom: var(--space-16);
+        }
+
+        .detail-main h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            color: var(--text-primary);
+        }
+
+        .detail-main p {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--space-8);
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: var(--space-6);
+            margin-bottom: var(--space-3);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        .detail-sidebar .sidebar-card {
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        .sidebar-card h3 {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-3);
+        }
+
+        .tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+        }
+
+        .tech-item {
+            padding: var(--space-1) var(--space-3);
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .sidebar-info {
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 900px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">VS</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="../index.html#" class="nav-link nav-cta" id="contactBtn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="detail-page">
+        <div class="container">
+            <header class="detail-header">
+                <div class="detail-nav">
+                    <a href="../index.html#projects" class="back-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Projects
+                    </a>
+                    <span class="detail-status completed">Completed</span>
+                </div>
+                <h1 class="detail-title">Disease Prevention System</h1>
+                <p class="detail-date">Aug 2023 — Feb 2024</p>
+                <div class="detail-actions">
+                    <a href="https://disease-prevention-system.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="detail-btn primary">
+                        View Live Demo
+                    </a>
+                    <a href="https://github.com/vaibhavshiroorkar/Disease-Prediction-System" target="_blank"
+                        rel="noopener noreferrer" class="detail-btn secondary">
+                        View GitHub
+                    </a>
+                </div>
+            </header>
+
+            <div class="detail-content">
+                <div class="detail-main">
+                    <h2>Overview</h2>
+                    <p>The Disease Prevention System is a predictive analytics platform that forecasts disease outbreaks
+                        by correlating environmental data with health trends. Using machine learning models trained on
+                        historical data, it helps healthcare organizations prepare for and prevent disease spread in
+                        their communities.</p>
+
+                    <h2>Key Features</h2>
+                    <ul class="feature-list">
+                        <li>Machine learning models for disease outbreak prediction</li>
+                        <li>Real-time environmental data integration (weather, humidity, temperature)</li>
+                        <li>Interactive dashboard for health trend visualization</li>
+                        <li>Risk assessment scoring for different geographic regions</li>
+                        <li>Alert system for high-risk outbreak scenarios</li>
+                    </ul>
+
+                    <h2>Technical Approach</h2>
+                    <p>The system uses a combination of Flask for the backend API, Scikit-learn for the machine learning
+                        models, and a responsive frontend for data visualization. The models were trained on synthetic
+                        datasets representing various disease patterns and environmental correlations.</p>
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card glass-card">
+                        <h3>Tech Stack</h3>
+                        <div class="tech-list">
+                            <span class="tech-item">Python</span>
+                            <span class="tech-item">Flask</span>
+                            <span class="tech-item">Scikit-learn</span>
+                            <span class="tech-item">Pandas</span>
+                            <span class="tech-item">NumPy</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-card glass-card">
+                        <h3>Role</h3>
+                        <p class="sidebar-info">ML Engineer & Developer</p>
+                    </div>
+                    <div class="sidebar-card glass-card">
+                        <h3>Type</h3>
+                        <p class="sidebar-info">Academic Project</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Vaibhav Shiroorkar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+</body>
+
+</html>

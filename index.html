@@ -52,7 +52,6 @@
     <section class="hero" id="hero">
         <div class="hero-bg">
             <div class="hero-gradient"></div>
-            <div class="hero-particles"></div>
         </div>
         <div class="hero-content">
             <p class="hero-greeting animate-fade-in">Hello, I'm</p>
@@ -62,7 +61,7 @@
                 and <span class="highlight">applied machine learning</span>.</p>
             <div class="hero-links animate-fade-in-delayed-2">
                 <a href="https://linkedin.com/in/vaibhavshiroorkar" target="_blank" rel="noopener noreferrer"
-                    class="hero-btn primary">
+                    class="hero-btn linkedin-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
@@ -70,7 +69,7 @@
                     View LinkedIn
                 </a>
                 <a href="https://github.com/vaibhavshiroorkar" target="_blank" rel="noopener noreferrer"
-                    class="hero-btn secondary">
+                    class="hero-btn github-btn">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                         <path
                             d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
@@ -154,34 +153,23 @@
         <div class="container">
             <h2 class="section-title">Experience</h2>
             <div class="experience-grid">
-                <div class="experience-card glass-card">
-                    <div class="experience-header">
-                        <div class="experience-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <div class="experience-meta">
-                            <span class="experience-date">May 2023 — Jul 2023</span>
-                            <span class="experience-location">Mumbai, IN</span>
-                        </div>
+                <a href="experience/philips-internship.html" class="experience-card glass-card">
+                    <div class="experience-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                        </svg>
                     </div>
                     <h3 class="experience-title">Intern – Technical Support & Systems</h3>
                     <p class="experience-company">Philips Authorized Service Center</p>
-                    <ul class="experience-list">
-                        <li>Diagnosed hardware faults in critical medical imaging systems, contributing to high
-                            equipment uptime.</li>
-                        <li>Executed calibration procedures and quality checks in compliance with industry safety
-                            standards.</li>
-                        <li>Analyzed system failure logs with senior engineers to support preventive maintenance
-                            planning.</li>
-                        <li>Maintained repair and compliance documentation, reducing audit retrieval time and
-                            operational delays.</li>
-                    </ul>
-                </div>
+                    <p class="experience-summary">Diagnosed hardware faults in medical imaging systems and executed
+                        calibration per industry safety standards.</p>
+                    <div class="experience-footer">
+                        <span class="experience-date">May 2023 — Jul 2023</span>
+                        <span class="experience-arrow">View →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -191,97 +179,71 @@
         <div class="container">
             <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
-                <article class="project-card glass-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                                <line x1="8" y1="21" x2="16" y2="21"></line>
-                                <line x1="12" y1="17" x2="12" y2="21"></line>
-                            </svg>
-                        </div>
-                        <span class="project-date">Jul 2024 — Dec 2024</span>
+                <a href="projects/pcease.html" class="project-card glass-card">
+                    <div class="project-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
                     </div>
-                    <h3 class="project-title"><a href="https://pcease.vercel.app/" target="_blank"
-                            rel="noopener noreferrer">PCEase</a></h3>
-                    <p class="project-description">A full-stack PC configuration platform with real-time component
-                        compatibility validation.</p>
-                    <ul class="project-features">
-                        <li>Custom compatibility engine that reduced invalid user configurations by 40%</li>
-                        <li>Optimized backend queries maintaining ~200ms average page load times</li>
-                        <li>Real-time component validation and recommendations</li>
-                    </ul>
+                    <h3 class="project-title">PCEase</h3>
+                    <p class="project-description">Comprehensive PC configuration platform featuring real-time
+                        compatibility validation and budget optimization tools.</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
                         <span class="tech-tag">MongoDB</span>
-                        <span class="tech-tag">REST APIs</span>
                     </div>
-                    <a href="https://pcease.vercel.app/" target="_blank" rel="noopener noreferrer" class="project-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                            <polyline points="15 3 21 3 21 9"></polyline>
-                            <line x1="10" y1="14" x2="21" y2="3"></line>
-                        </svg>
-                        View Live
-                    </a>
-                </article>
+                    <div class="project-footer">
+                        <span class="project-status completed">Completed</span>
+                        <span class="project-arrow">View →</span>
+                    </div>
+                </a>
 
-                <article class="project-card glass-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-                            </svg>
-                        </div>
-                        <span class="project-date">Aug 2023 — Feb 2024</span>
+                <a href="projects/disease-prevention.html" class="project-card glass-card">
+                    <div class="project-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                        </svg>
                     </div>
                     <h3 class="project-title">Disease Prevention System</h3>
-                    <p class="project-description">A predictive analytics system to forecast disease trends using
-                        environmental and weather data.</p>
-                    <ul class="project-features">
-                        <li>Linear Regression model using Scikit-learn for correlation analysis</li>
-                        <li>Flask-based backend serving predictions to responsive web interface</li>
-                        <li>Environmental data integration for accurate forecasting</li>
-                    </ul>
+                    <p class="project-description">Predictive analytics system that forecasts disease outbreaks by
+                        correlating environmental data with health trends.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Python</span>
                         <span class="tech-tag">Flask</span>
                         <span class="tech-tag">Scikit-learn</span>
                     </div>
-                </article>
+                    <div class="project-footer">
+                        <span class="project-status completed">Completed</span>
+                        <span class="project-arrow">View →</span>
+                    </div>
+                </a>
 
-                <article class="project-card glass-card">
-                    <div class="project-header">
-                        <div class="project-icon">
-                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2">
-                                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
-                                <line x1="1" y1="10" x2="23" y2="10"></line>
-                            </svg>
-                        </div>
-                        <span class="project-status">In Development</span>
+                <a href="projects/paysentry.html" class="project-card glass-card">
+                    <div class="project-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                            <line x1="1" y1="10" x2="23" y2="10"></line>
+                        </svg>
                     </div>
                     <h3 class="project-title">PaySentry</h3>
-                    <p class="project-description">Real-time payment intelligence & compliance platform capable of
-                        processing transactions at scale, detecting fraud in &lt;100ms, and automating regulatory
-                        compliance.</p>
-                    <ul class="project-features">
-                        <li>FastAPI backend with Redis Streams for atomic balance updates</li>
-                        <li>Hybrid fraud detection using XGBoost + Isolation Forest with SHAP explainability</li>
-                        <li>LangGraph-powered ComplianceGPT agent with RAG over RBI/NPCI circulars</li>
-                    </ul>
+                    <p class="project-description">High-performance payment intelligence platform for real-time fraud
+                        detection and automated regulatory compliance.</p>
                     <div class="project-tech">
                         <span class="tech-tag">FastAPI</span>
                         <span class="tech-tag">Redis</span>
                         <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">LangChain</span>
-                        <span class="tech-tag">React</span>
                     </div>
-                </article>
+                    <div class="project-footer">
+                        <span class="project-status in-progress">In Development</span>
+                        <span class="project-arrow">View →</span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -364,10 +326,12 @@
                     <div class="achievement-icon trophy">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                             <path
-                                d="M12 2C9.243 2 7 4.243 7 7v2H5c-1.103 0-2 .897-2 2v2c0 2.206 1.794 4 4 4h.535c.463 1.808 1.756 3.293 3.465 4.096V23h2v-1.904c1.709-.803 3.002-2.288 3.465-4.096H17c2.206 0 4-1.794 4-4v-2c0-1.103-.897-2-2-2h-2V7c0-2.757-2.243-5-5-5zm5 11c0 1.103-.897 2-2 2h-.536A4.977 4.977 0 0113 17.899V15h-2v2.899A4.977 4.977 0 019.536 15H9c-1.103 0-2-.897-2-2v-2h2V7c0-1.654 1.346-3 3-3s3 1.346 3 3v4h2v2z" />
+                                d="M6 3h12v3c0 4.5-3 8-6 8s-6-3.5-6-8V3zM4 5h2v3c0 1.66-1.34 3-3 3V7c0-1.1.9-2 2-2zM20 5h-2v3c0 1.66 1.34 3 3 3V7c0-1.1-.9-2-2-2zM10 14h4v3h-4zM8 19h8v2H8z">
+                            </path>
                         </svg>
                     </div>
-                    <h3>First Prize – Diploma Final Year Project</h3>
+                    <h3>Diploma Final Year Project</h3>
+                    <span class="achievement-badge winner">First Prize</span>
                     <p>Awarded top honors for developing the "Disease Prevention System"</p>
                 </div>
 
@@ -378,7 +342,8 @@
                             <path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"></path>
                         </svg>
                     </div>
-                    <h3>Participant – Diploma Inter-College Hackathon</h3>
+                    <h3>Diploma Inter-College Hackathon</h3>
+                    <span class="achievement-badge participant">Participation</span>
                     <p>Built a full-stack financial data solution under strict time constraints</p>
                 </div>
 
@@ -386,10 +351,12 @@
                     <div class="achievement-icon trophy">
                         <svg width="40" height="40" viewBox="0 0 24 24" fill="currentColor">
                             <path
-                                d="M12 2C9.243 2 7 4.243 7 7v2H5c-1.103 0-2 .897-2 2v2c0 2.206 1.794 4 4 4h.535c.463 1.808 1.756 3.293 3.465 4.096V23h2v-1.904c1.709-.803 3.002-2.288 3.465-4.096H17c2.206 0 4-1.794 4-4v-2c0-1.103-.897-2-2-2h-2V7c0-2.757-2.243-5-5-5zm5 11c0 1.103-.897 2-2 2h-.536A4.977 4.977 0 0113 17.899V15h-2v2.899A4.977 4.977 0 019.536 15H9c-1.103 0-2-.897-2-2v-2h2V7c0-1.654 1.346-3 3-3s3 1.346 3 3v4h2v2z" />
+                                d="M6 3h12v3c0 4.5-3 8-6 8s-6-3.5-6-8V3zM4 5h2v3c0 1.66-1.34 3-3 3V7c0-1.1.9-2 2-2zM20 5h-2v3c0 1.66 1.34 3 3 3V7c0-1.1-.9-2-2-2zM10 14h4v3h-4zM8 19h8v2H8z">
+                            </path>
                         </svg>
                     </div>
-                    <h3>First Prize – Mount Mary Bill Gates Competition</h3>
+                    <h3>Mount Mary Bill Gates Competition</h3>
+                    <span class="achievement-badge winner">First Prize</span>
                     <p>Competed against students in a practical evaluation of fundamental computer skills and digital
                         problem-solving</p>
                 </div>
@@ -409,13 +376,15 @@
             <h2 class="modal-title">Let's Connect</h2>
             <p class="modal-intro">Open to new projects, collaborations, and opportunities.</p>
             <div class="modal-links">
-                <a href="mailto:shiroorkarvaibhav@gmail.com" class="modal-link">
+                <div class="modal-link email-copy"
+                    onclick="navigator.clipboard.writeText('shiroorkarvaibhav@gmail.com'); this.classList.add('copied'); setTimeout(() => this.classList.remove('copied'), 2000);">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                         <polyline points="22,6 12,13 2,6"></polyline>
                     </svg>
                     <span>shiroorkarvaibhav@gmail.com</span>
-                </a>
+                    <span class="copy-hint">Click to copy</span>
+                </div>
                 <a href="https://linkedin.com/in/vaibhavshiroorkar" target="_blank" rel="noopener noreferrer"
                     class="modal-link">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -439,7 +408,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Vaibhav Shiroorkar. All rights reserved.</p>
+            <p>&copy; 2026 Vaibhav Shiroorkar. All rights reserved.</p>
         </div>
     </footer>
 

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philips Internship | Vaibhav Shiroorkar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../index.css">
+    <style>
+        .detail-page {
+            min-height: 100vh;
+            padding-top: 80px;
+        }
+
+        .detail-header {
+            padding: var(--space-12) 0 var(--space-8);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            margin-bottom: var(--space-10);
+        }
+
+        .detail-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-6);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            color: var(--text-secondary);
+            font-weight: 500;
+            font-size: var(--font-size-sm);
+        }
+
+        .back-link:hover {
+            color: var(--text-primary);
+        }
+
+        .detail-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: var(--space-1) var(--space-3);
+            background: rgba(0, 0, 0, 0.04);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: var(--text-secondary);
+        }
+
+        .detail-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: var(--space-2);
+            color: var(--text-primary);
+        }
+
+        .detail-subtitle {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-2);
+        }
+
+        .detail-date {
+            font-size: var(--font-size-base);
+            color: var(--text-tertiary);
+        }
+
+        .detail-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: var(--space-12);
+            padding-bottom: var(--space-16);
+        }
+
+        .detail-main h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            margin-bottom: var(--space-4);
+            margin-top: var(--space-8);
+            color: var(--text-primary);
+        }
+
+        .detail-main h2:first-child {
+            margin-top: 0;
+        }
+
+        .detail-main p {
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-4);
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: var(--space-6);
+            margin-bottom: var(--space-3);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .feature-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent-cyan);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--space-2);
+            margin-top: var(--space-4);
+        }
+
+        .skill-item {
+            padding: var(--space-1) var(--space-3);
+            background: rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .detail-sidebar .sidebar-card {
+            padding: var(--space-6);
+            margin-bottom: var(--space-4);
+        }
+
+        .sidebar-card h3 {
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-3);
+        }
+
+        .sidebar-info {
+            font-size: var(--font-size-sm);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 900px) {
+            .detail-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">VS</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#education" class="nav-link">Education</a></li>
+                <li><a href="../index.html#experience" class="nav-link">Experience</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="../index.html#achievements" class="nav-link">Achievements</a></li>
+                <li><a href="../index.html#" class="nav-link nav-cta" id="contactBtn">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="detail-page">
+        <div class="container">
+            <header class="detail-header">
+                <div class="detail-nav">
+                    <a href="../index.html#experience" class="back-link">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M19 12H5M12 19l-7-7 7-7" />
+                        </svg>
+                        Experience
+                    </a>
+                    <span class="detail-badge">Internship</span>
+                </div>
+                <h1 class="detail-title">Technical Support & Systems Intern</h1>
+                <p class="detail-subtitle">Philips Authorized Service Center</p>
+                <p class="detail-date">May 2023 — Jul 2023 · Mumbai, India</p>
+            </header>
+
+            <div class="detail-content">
+                <div class="detail-main">
+                    <h2>Overview</h2>
+                    <p>During my internship at a Philips Authorized Service Center, I gained hands-on experience in the
+                        maintenance and troubleshooting of advanced medical imaging equipment. This role provided
+                        invaluable exposure to the intersection of healthcare technology and engineering.</p>
+
+                    <h2>Key Responsibilities</h2>
+                    <ul class="feature-list">
+                        <li><strong>Hardware Diagnostics:</strong> Diagnosed hardware faults in medical imaging systems
+                            including CT scanners and MRI machines, contributing to improved equipment uptime</li>
+                        <li><strong>Calibration & QA:</strong> Executed precise calibration procedures and quality
+                            checks in accordance with industry safety standards</li>
+                        <li><strong>Failure Analysis:</strong> Collaborated with senior engineers to analyze failure
+                            logs and implement preventive maintenance strategies</li>
+                        <li><strong>Documentation:</strong> Maintained comprehensive repair documentation and service
+                            records, improving compliance tracking</li>
+                    </ul>
+
+                    <h2>Skills Developed</h2>
+                    <div class="skills-list">
+                        <span class="skill-item">Medical Device Maintenance</span>
+                        <span class="skill-item">Hardware Troubleshooting</span>
+                        <span class="skill-item">Calibration Procedures</span>
+                        <span class="skill-item">Technical Documentation</span>
+                        <span class="skill-item">Quality Assurance</span>
+                    </div>
+
+                    <h2>Impact</h2>
+                    <p>This experience reinforced my understanding of precision engineering in critical healthcare
+                        environments. The systematic approach to diagnostics and documentation I developed here
+                        continues to influence my work in software engineering.</p>
+                </div>
+
+                <aside class="detail-sidebar">
+                    <div class="sidebar-card glass-card">
+                        <h3>Duration</h3>
+                        <p class="sidebar-info">36 Days</p>
+                    </div>
+                    <div class="sidebar-card glass-card">
+                        <h3>Location</h3>
+                        <p class="sidebar-info">Malad, Mumbai, India</p>
+                    </div>
+                    <div class="sidebar-card glass-card">
+                        <h3>Domain</h3>
+                        <p class="sidebar-info">Healthcare Technology</p>
+                    </div>
+                    <div class="sidebar-card glass-card">
+                        <h3>Role</h3>
+                        <p class="sidebar-info">Technical Intern</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Vaibhav Shiroorkar. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+</body>
+
+</html>

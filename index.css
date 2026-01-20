@@ -1226,6 +1226,243 @@ button {
 }
 
 /* ==========================================
+   BEYOND THE CODE SECTION
+   ========================================== */
+.beyond-code {
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+.beyond-code::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
+}
+
+.beyond-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.beyond-intro {
+    text-align: center;
+    margin-bottom: var(--space-12);
+}
+
+.beyond-intro p {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.beyond-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+}
+
+.beyond-card {
+    padding: var(--space-8);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.beyond-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--text-tertiary), var(--text-secondary));
+    border-radius: var(--radius-full);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.beyond-card:hover::before {
+    opacity: 1;
+}
+
+.beyond-icon {
+    width: 72px;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-5);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0.08));
+    color: var(--text-secondary);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    transition: all var(--transition-base);
+}
+
+.beyond-card:hover .beyond-icon {
+    transform: scale(1.05);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+}
+
+.beyond-card h3 {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-5);
+    color: var(--text-primary);
+}
+
+.learning-list {
+    text-align: left;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.learning-list li {
+    padding: var(--space-3) var(--space-4);
+    padding-left: var(--space-8);
+    position: relative;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: var(--radius-md);
+    margin-bottom: var(--space-2);
+    transition: all var(--transition-fast);
+}
+
+.learning-list li:last-child {
+    margin-bottom: 0;
+}
+
+.learning-list li:hover {
+    background: rgba(0, 0, 0, 0.04);
+    transform: translateX(4px);
+}
+
+.learning-list li::before {
+    content: "▸";
+    position: absolute;
+    left: var(--space-4);
+    color: var(--text-tertiary);
+    font-size: var(--font-size-xs);
+}
+
+.interests-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    justify-content: center;
+}
+
+.interest-tag {
+    padding: var(--space-2) var(--space-4);
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: all var(--transition-base);
+    cursor: default;
+}
+
+.interest-tag:hover {
+    background: var(--text-primary);
+    border-color: var(--text-primary);
+    color: var(--bg-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.philosophy-quote {
+    font-size: var(--font-size-base);
+    font-style: italic;
+    color: var(--text-secondary);
+    line-height: 1.9;
+    padding: var(--space-5);
+    background: rgba(0, 0, 0, 0.02);
+    border-left: 4px solid var(--text-secondary);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    text-align: left;
+    margin: 0;
+    position: relative;
+}
+
+.philosophy-quote::before {
+    content: '"';
+    position: absolute;
+    top: var(--space-2);
+    left: var(--space-3);
+    font-size: var(--font-size-3xl);
+    color: var(--text-tertiary);
+    opacity: 0.3;
+    font-family: Georgia, serif;
+    line-height: 1;
+}
+
+.fun-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-4);
+    padding: var(--space-8);
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.fun-stat {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-base);
+}
+
+.fun-stat:hover {
+    background: rgba(0, 0, 0, 0.02);
+    transform: translateY(-4px);
+}
+
+.fun-stat-icon {
+    font-size: 2.5rem;
+    line-height: 1;
+    filter: grayscale(0);
+    transition: transform var(--transition-base);
+}
+
+.fun-stat:hover .fun-stat-icon {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+.fun-stat-number {
+    font-size: var(--font-size-2xl);
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.fun-stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-tertiary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 500;
+}
+
+/* ==========================================
    FOOTER
    ========================================== */
 .footer {
@@ -1394,6 +1631,28 @@ button {
 
     .achievements-grid {
         grid-template-columns: 1fr;
+    }
+
+    .beyond-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fun-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-4);
+        padding: var(--space-6);
+    }
+
+    .fun-stat {
+        padding: var(--space-3);
+    }
+
+    .fun-stat-icon {
+        font-size: 2rem;
+    }
+
+    .fun-stat-number {
+        font-size: var(--font-size-xl);
     }
 
     .timeline-content {

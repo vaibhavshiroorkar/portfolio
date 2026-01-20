@@ -43,9 +43,9 @@
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#achievements" class="nav-link">Achievements</a></li>
                 <li><a href="#" class="nav-link nav-cta" id="contactBtn">Contact</a></li>
             </ul>
@@ -152,28 +152,70 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section class="section experience" id="experience">
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
         <div class="container">
-            <h2 class="section-title">Experience</h2>
-            <div class="experience-grid">
-                <a href="experience/philips-internship.html" class="experience-card glass-card">
-                    <div class="experience-icon">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass-card">
+                    <div class="skill-category-header">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
-                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
                         </svg>
+                        <h3>Languages</h3>
                     </div>
-                    <h3 class="experience-title">Intern – Technical Support & Systems</h3>
-                    <p class="experience-company">Philips Authorized Service Center</p>
-                    <p class="experience-summary">Diagnosed hardware faults in medical imaging systems and executed
-                        calibration per industry safety standards.</p>
-                    <div class="experience-footer">
-                        <span class="experience-date">May 2023 — Jul 2023</span>
-                        <span class="experience-arrow">View →</span>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">SQL (PostgreSQL)</span>
+                        <span class="skill-tag">HTML</span>
+                        <span class="skill-tag">CSS</span>
+                        <span class="skill-tag">JavaScript</span>
                     </div>
-                </a>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="skill-category-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <h3>Frameworks & Libraries</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">FastAPI</span>
+                        <span class="skill-tag">React</span>
+                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Pandas</span>
+                        <span class="skill-tag">NumPy</span>
+                        <span class="skill-tag">Scikit-learn</span>
+                        <span class="skill-tag">XGBoost</span>
+                        <span class="skill-tag">LangChain</span>
+                    </div>
+                </div>
+
+                <div class="skill-category glass-card">
+                    <div class="skill-category-header">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+                            </path>
+                        </svg>
+                        <h3>Tools & Platforms</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Git</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">VS Code</span>
+                        <span class="skill-tag">PyCharm</span>
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -261,70 +303,28 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="section skills" id="skills">
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
         <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category glass-card">
-                    <div class="skill-category-header">
+            <h2 class="section-title">Experience</h2>
+            <div class="experience-grid">
+                <a href="experience/philips-internship.html" class="experience-card glass-card">
+                    <div class="experience-icon">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                             stroke-width="2">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path>
                         </svg>
-                        <h3>Languages</h3>
                     </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">SQL (PostgreSQL)</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">JavaScript</span>
+                    <h3 class="experience-title">Intern – Technical Support & Systems</h3>
+                    <p class="experience-company">Philips Authorized Service Center</p>
+                    <p class="experience-summary">Diagnosed hardware faults in medical imaging systems and executed
+                        calibration per industry safety standards.</p>
+                    <div class="experience-footer">
+                        <span class="experience-date">May 2023 — Jul 2023</span>
+                        <span class="experience-arrow">View →</span>
                     </div>
-                </div>
-
-                <div class="skill-category glass-card">
-                    <div class="skill-category-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                            <path d="M2 17l10 5 10-5"></path>
-                            <path d="M2 12l10 5 10-5"></path>
-                        </svg>
-                        <h3>Frameworks & Libraries</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">FastAPI</span>
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                        <span class="skill-tag">XGBoost</span>
-                        <span class="skill-tag">LangChain</span>
-                    </div>
-                </div>
-
-                <div class="skill-category glass-card">
-                    <div class="skill-category-header">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2">
-                            <path
-                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                            </path>
-                        </svg>
-                        <h3>Tools & Platforms</h3>
-                    </div>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Redis</span>
-                        <span class="skill-tag">VS Code</span>
-                        <span class="skill-tag">PyCharm</span>
-                        <span class="skill-tag">Linux</span>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>
@@ -332,7 +332,7 @@
     <!-- Achievements Section -->
     <section class="section achievements" id="achievements">
         <div class="container">
-            <h2 class="section-title">Honors & Achievements</h2>
+            <h2 class="section-title">Achievements</h2>
             <div class="achievements-grid">
                 <div class="achievement-card glass-card">
                     <div class="achievement-icon trophy">
@@ -374,6 +374,69 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <!-- Beyond the Code Section -->
+    <section class="section beyond-code" id="beyond">
+        <div class="container">
+            <h2 class="section-title">Beyond the Code</h2>
+            <div class="beyond-content">
+                <div class="beyond-intro">
+                    <p>When I'm not debugging or architecting systems, you'll find me exploring the intersection of
+                        technology and creativity.</p>
+                </div>
+
+                <div class="beyond-grid">
+                    <div class="beyond-card glass-card">
+                        <div class="beyond-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                        </div>
+                        <h3>Currently Learning</h3>
+                        <ul class="learning-list">
+                            <li>System Design</li>
+                            <li>Data Handling</li>
+                            <li>LLM</li>
+                        </ul>
+                    </div>
+
+                    <div class="beyond-card glass-card">
+                        <div class="beyond-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path d="M12 6v6l4 2"></path>
+                            </svg>
+                        </div>
+                        <h3>Interests</h3>
+                        <div class="interests-tags">
+                            <span class="interest-tag">Research</span>
+                            <span class="interest-tag">Problem Solving</span>
+                            <span class="interest-tag">Animation</span>
+                            <span class="interest-tag">Sports</span>
+                            <span class="interest-tag">Gaming</span>
+                        </div>
+                    </div>
+
+                    <div class="beyond-card glass-card">
+                        <div class="beyond-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                                <path d="M2 17l10 5 10-5"></path>
+                                <path d="M2 12l10 5 10-5"></path>
+                            </svg>
+                        </div>
+                        <h3>Philosophy</h3>
+                        <blockquote class="philosophy-quote">
+                            "While effort may not always bring success, There is no such thing as wasted effort."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
     </section>
 
     <!-- Contact Modal -->

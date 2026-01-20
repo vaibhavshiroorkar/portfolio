@@ -128,30 +128,46 @@ function initNavbarScroll() {
 // ==========================================
 function initActiveSection() {
     const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link:not(.nav-cta)'); // Exclude Contact button
 
-    const observerOptions = {
-        root: null,
-        rootMargin: '-50% 0px -50% 0px',
-        threshold: 0
-    };
+    const updateActiveSection = () => {
+        const scrollPosition = window.scrollY;
+        const navbarHeight = 80;
+        const offset = navbarHeight + 100; // Extra buffer for better UX
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const id = entry.target.getAttribute('id');
+        let currentSection = null;
 
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${id}`) {
-                        link.classList.add('active');
-                    }
-                });
+        // Find the section that is currently in view
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - offset;
+            const sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                currentSection = section.getAttribute('id');
             }
         });
-    }, observerOptions);
 
-    sections.forEach(section => observer.observe(section));
+        // If no section found (e.g., at very top), default to first section
+        if (!currentSection && scrollPosition < 200) {
+            currentSection = 'hero';
+        }
+
+        // Update nav links
+        if (currentSection) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${currentSection}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    };
+
+    // Run on scroll with throttle
+    window.addEventListener('scroll', throttle(updateActiveSection, 50), { passive: true });
+
+    // Run once on load
+    updateActiveSection();
 }
 
 // ==========================================

@@ -88,6 +88,21 @@ html {
     scroll-padding-top: 80px;
 }
 
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
 body {
     font-family: var(--font-family);
     font-size: var(--font-size-base);
@@ -146,13 +161,15 @@ button {
     border-radius: var(--radius-xl);
     box-shadow: 0 8px 32px var(--glass-shadow);
     transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
-    will-change: transform;
 }
 
-.glass-card:hover {
-    transform: translateY(-6px) scale(1.02);
-    box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
-    border-color: rgba(0, 0, 0, 0.15);
+/* Only apply hover transforms on devices that support hover (non-touch) */
+@media (hover: hover) and (pointer: fine) {
+    .glass-card:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.12);
+        border-color: rgba(0, 0, 0, 0.15);
+    }
 }
 
 .project-meta {
@@ -177,8 +194,7 @@ button {
     -webkit-backdrop-filter: none;
     border-bottom: 1px solid transparent;
     box-shadow: none;
-    transition: background-color var(--transition-base), backdrop-filter var(--transition-base), border-bottom var(--transition-base), box-shadow var(--transition-base);
-    will-change: background-color, backdrop-filter;
+    transition: background-color var(--transition-base), border-bottom var(--transition-base), box-shadow var(--transition-base);
 }
 
 .navbar.scrolled {
@@ -559,7 +575,6 @@ button {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
-    will-change: opacity, transform;
 }
 
 .scroll-animate.in-view {
@@ -578,6 +593,17 @@ button {
     content-visibility: auto;
     contain-intrinsic-size: 800px;
     /* Estimate height to prevent scrollbar jumping */
+}
+
+/* Subtle gradient border at top of each section */
+.section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .section-title {
@@ -1230,18 +1256,6 @@ button {
    ========================================== */
 .beyond-code {
     background: var(--bg-secondary);
-    position: relative;
-    overflow: hidden;
-}
-
-.beyond-code::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent);
 }
 
 .beyond-content {
@@ -1384,29 +1398,17 @@ button {
 }
 
 .philosophy-quote {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-lg);
     font-style: italic;
     color: var(--text-secondary);
-    line-height: 1.9;
-    padding: var(--space-5);
-    background: rgba(0, 0, 0, 0.02);
-    border-left: 4px solid var(--text-secondary);
-    border-radius: 0 var(--radius-md) var(--radius-md) 0;
-    text-align: left;
+    line-height: 1.6;
+    padding: var(--space-4) var(--space-2);
+    text-align: center;
     margin: 0;
+    margin-top: -10px;
+    /* Lift text slightly */
     position: relative;
-}
-
-.philosophy-quote::before {
-    content: '"';
-    position: absolute;
-    top: var(--space-2);
-    left: var(--space-3);
-    font-size: var(--font-size-3xl);
-    color: var(--text-tertiary);
-    opacity: 0.3;
-    font-family: Georgia, serif;
-    line-height: 1;
+    z-index: 1;
 }
 
 .fun-stats {
@@ -1574,6 +1576,31 @@ button {
     .experience-meta {
         align-items: flex-start;
         text-align: left;
+    }
+
+    /* Mobile Performance Optimizations */
+    .glass-card {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    .navbar.scrolled {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+    /* Simplify transitions on mobile for better performance */
+    .glass-card,
+    .skill-tag,
+    .interest-tag,
+    .beyond-card,
+    .learning-list li {
+        transition: none;
+    }
+
+    /* Ensure smooth scrolling */
+    .section {
+        touch-action: pan-y;
     }
 }
 

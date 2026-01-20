@@ -1,6 +1,6 @@
 # Vaibhav's Portfolio
 
-**Hey there! 👋**
+**Hey there!**
 
 Welcome to the repository for my personal portfolio website. I built this to showcase my journey as an engineer, highlight some of the cool projects I've been working on, and share a bit about who I am beyond the code.
 
@@ -8,7 +8,7 @@ I kept things simple and fast—no heavy frameworks, just pure HTML, CSS, and Va
 
 ![License](https://img.shields.io/badge/License-MIT-blue)
 
-## ✨ What's Inside?
+## What's Inside?
 
 I wanted a site that feels clean, professional, but also a little bit "me". Here are some of the key things you'll find:
 
@@ -17,7 +17,7 @@ I wanted a site that feels clean, professional, but also a little bit "me". Here
 -   **Smooth Interactions**: Little details matter—I added scroll animations and hover effects to make navigating feel nice.
 -   **Optimized Performance**: Since there's no heavy bundle to download, it loads super fast. ⚡
 
-## 🧱 Built With
+## Built With
 
 I stuck to the classics for this one:
 
@@ -26,7 +26,7 @@ I stuck to the classics for this one:
 -   **JavaScript (ES6+)** for the interactive bits
 -   **Google Fonts** (Inter) for typography
 
-## 🏃‍♂️ Running It Locally
+## Running It Locally
 
 Want to take a look under the hood or run it on your machine? It's straightforward:
 
@@ -44,7 +44,7 @@ Want to take a look under the hood or run it on your machine? It's straightforwa
         ```
         Then head over to `http://localhost:8000`
 
-## 🎨 Make It Yours
+## Make It Yours
 
 If you like this design, feel free to fork it and use it for your own portfolio! I've made it pretty easy to customize:
 
@@ -52,19 +52,9 @@ If you like this design, feel free to fork it and use it for your own portfolio!
 -   **Content**: `index.html` is well-commented, so you can easily swap in your own text, projects, and bio.
 -   **New Pages**: Check out the `projects/` or `experience/` folders to see how I added detailed sub-pages.
 
-## 📄 License
+## License
 
 I believe in sharing knowledge. This project is open-source under the [MIT License](LICENSE), so go ahead—fork it, mod it, learn from it, or use it as a base for your own site.
 
 If you do build something cool with it, I'd love to see it! A star ⭐ on the repo would also make my day.
 
-## 📬 Say Hi!
-
-I'm always open to chatting about code, tech, or new opportunities.
-
--   **GitHub**: [@vaibhavshiroorkar](https://github.com/vaibhavshiroorkar)
--   **LinkedIn**: [vaibhavshiroorkar](https://linkedin.com/in/vaibhavshiroorkar)
-
----
-
-*Thanks for stopping by! Made with ❤️ and copious amounts of ☕.*

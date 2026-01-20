@@ -50,6 +50,16 @@ function initNavigation() {
 // SCROLL ANIMATIONS
 // ==========================================
 function initScrollAnimations() {
+    // Respect user's reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion) {
+        // Skip animations entirely for users who prefer reduced motion
+        document.querySelectorAll('.glass-card, .timeline-item, .section-title, .about-content, .stat')
+            .forEach(el => el.classList.add('in-view'));
+        return;
+    }
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
@@ -69,9 +79,28 @@ function initScrollAnimations() {
         '.glass-card, .timeline-item, .section-title, .about-content, .stat'
     );
 
-    animateElements.forEach((el, index) => {
+    // Check if mobile (touch device)
+    const isMobile = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+
+    // Group elements by their parent section for staggered delays
+    const sectionIndices = new Map();
+
+    animateElements.forEach((el) => {
         el.classList.add('scroll-animate');
-        el.style.transitionDelay = `${index % 4 * 0.1}s`;
+
+        // Skip delay on mobile for faster perceived loading
+        if (!isMobile) {
+            // Get the parent section to reset index per section
+            const parentSection = el.closest('.section') || el.closest('section');
+            const sectionId = parentSection ? parentSection.id : 'default';
+
+            // Get current index for this section, starting at 0
+            const currentIndex = sectionIndices.get(sectionId) || 0;
+            sectionIndices.set(sectionId, currentIndex + 1);
+
+            // Stagger within section (max 4 items then reset)
+            el.style.transitionDelay = `${(currentIndex % 4) * 0.1}s`;
+        }
         observer.observe(el);
     });
 }
@@ -239,7 +268,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // HASH SCROLL ON PAGE LOAD (for cross-page navigation)
 // ==========================================
 // When navigating from subpages with hash (e.g., ../index.html#projects),
-// scroll to the target with the same 5% offset
+// jump directly to the target section without smooth scroll
 window.addEventListener('load', function () {
     if (window.location.hash) {
         const target = document.querySelector(window.location.hash);
@@ -249,11 +278,12 @@ window.addEventListener('load', function () {
                 const navbarHeight = 76;
                 const offset = navbarHeight - (window.innerHeight * 0.05);
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                // Use instant scroll (no animation) for cross-page navigation
                 window.scrollTo({
                     top: targetPosition,
-                    behavior: 'smooth'
+                    behavior: 'instant'
                 });
-            }, 100);
+            }, 50);
         }
     }
 });

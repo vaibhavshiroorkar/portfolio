@@ -6,7 +6,7 @@ Welcome to the repository for my personal portfolio website. I built this to sho
 
 I kept things simple and fast—no heavy frameworks, just pure HTML, CSS, and Vanilla JavaScript with some modern design touches like glassmorphism and smooth scrolling.
 
-![License](https://img.shields.io/badge/License-MIT-blue)
+🌐 **Website:** [Shiroorkar.com](https://shiroorkar.com)
 
 ## What's Inside?
 
